@@ -5,13 +5,19 @@
   "main": "index.js",
   "scripts": {
     "test": "cypress run",
-    "open": "cypress open"
+    "open": "cypress open",
+    "report:merge": "mochawesome-merge cypress/reports/*.json > cypress/reports/mochawesome.json",
+    "report:html": "marge cypress/reports/mochawesome.json -f index -o cypress/reports/html",
+    "report": "npm run report:merge && npm run report:html"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "cypress": "^15.0.0"
+    "cypress": "^15.0.0",
+    "mochawesome": "^7.1.3",
+    "mochawesome-merge": "^5.0.0",
+    "mochawesome-report-generator": "^6.2.0"
   }
 }
