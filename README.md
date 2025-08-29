@@ -159,7 +159,7 @@ Arquivo: **`.github/workflows/cypress.yml`**
 
 ## 📄 Licença
 
-Projeto desenvolvido para fins de avaliação técnica. Ajuste conforme necessário.
+Projeto desenvolvido para fins de avaliação técnica.
 
 ```
 
