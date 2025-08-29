@@ -3,14 +3,22 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     baseUrl: "https://front.serverest.dev/",
-    setupNodeEvents(on, config) {
-      // event listeners, se precisar
-    },
+    retries: { runMode: 2, openMode: 0 },
+    specPattern: "cypress/e2e/**/*.cy.js",
+    video: true,
+    viewportWidth: 1366,
+    viewportHeight: 800,
   },
   env: {
-    apiUrl: "https://serverest.dev"
+    apiUrl: "https://serverest.dev",
   },
-  video: true,
-  screenshotsFolder: "cypress/screenshots",
-  videosFolder: "cypress/videos",
+  reporter: "mochawesome",
+  reporterOptions: {
+    reportDir: "cypress/reports",
+    overwrite: false,
+    html: false,   // não gera HTML aqui
+    json: true,    // gera JSON por spec
+    timestamp: "ddmmyyyy_HHMMss"
+  }
 });
+
